@@ -45,14 +45,14 @@ def mess(message):
         location = covid19.getLocationByCountryCode("JP")
     else:
         location = covid19.getLatest()
-        final_message = f"<u>Данные по всему миру:</u>\n<b>Заболевших: </b>{location['confirmed']:,}\n<b>Сметрей: </b>{location['deaths']:,}"
+        final_message = f"<u>Данные по всему миру:</u>\n<b>Заболевших: </b>{location['confirmed']:,}\n<b>Смертей: </b>{location['deaths']:,}"
 
     if final_message == "":
         date = location[0]['last_updated'].split("T")
         time = date[1].split(".")
         final_message = f"<u>Данные по стране:</u>\nНаселение: {location[0]['country_population']:,}\n"\
                         f"Последнее обновление: {date[0]} {time[0]}\nПоследние данные:\n<b>" \
-                        f"Заболевших: </b>{location[0]['latest']['confirmed']:,}\n<b>Сметрей: </b>"\
+                        f"Заболевших: </b>{location[0]['latest']['confirmed']:,}\n<b>Смертей: </b>"\
                         f"{location[0]['latest']['deaths']:,}"
 
     bot.send_message(message.chat.id, final_message, parse_mode='html')
