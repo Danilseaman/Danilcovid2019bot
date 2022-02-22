@@ -45,7 +45,7 @@ def mess(message):
         location = covid19.getLocationByCountryCode("JP")
     else:
         location = covid19.getLatest()
-    final_message = f"<u>Данные по всему миру:</u>\n<b>Заболевших: </b>{location[0]['latest']['confirmed']:,}\n<b>Сметрей: </b>{location[0]['latest']['deaths']:,}"
+        final_message = f"<u>Данные по всему миру:</u>\n<b>Заболевших: </b>{location['confirmed']:,}\n<b>Сметрей: </b>{location['deaths']:,}"
 
     if final_message == "":
         date = location[0]['last_updated'].split("T")
