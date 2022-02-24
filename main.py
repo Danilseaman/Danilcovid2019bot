@@ -14,7 +14,7 @@ def start(message):
     btn3 = types.KeyboardButton('Беларусь')
     btn4 = types.KeyboardButton('Украина')
     markup.add(btn1, btn2, btn3, btn4)
-    send_message = f"<b>Привет {message.from_user.first_name}!</b>\nЧтобы узнать данные про коронавируса напишите "\
+    send_message = f"<b>Привет, {message.from_user.first_name}!</b>\nЧтобы узнать данные про коронавирус напишите "\
                    f"название страны, например: Россия, США, Украина и так далее"
     bot.send_message(message.chat.id, send_message, parse_mode='html', reply_markup=markup)
 
