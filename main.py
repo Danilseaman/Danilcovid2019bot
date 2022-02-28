@@ -18,7 +18,6 @@ def start(message):
                    f"название страны, например: Россия, США, Украина и так далее"
     bot.send_message(message.chat.id, send_message, parse_mode='html', reply_markup=markup)
 
-
 # Функция, что сработает при отправке какого-либо текста боту
 # Здесь мы создаем отслеживания данных и вывод статистики по определенной стране
 @bot.message_handler(content_types=['text'])
